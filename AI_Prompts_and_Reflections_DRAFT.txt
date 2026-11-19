@@ -1,0 +1,25 @@
+DRAFT - edit this in your own words before submitting on Moodle.
+Replace the reflections with what you really noticed while using the project.
+
+PROMPT 1
+"Create a Spring Boot REST API project for a Student Profile and Skill Development
+Management System with a Student entity (id, name, email, course, programming score,
+mathematics score, list of skills) stored in MySQL."
+Reflection: This gave the project structure (controller, service, repository, model). I
+learned how Spring Boot layers work and how @ElementCollection stores a List in a
+separate table.
+
+PROMPT 2
+"Implement business rules: average score, performance category, stronger subject,
+merit list sorted by average descending, students with the same skills, and students
+needing improvement in programming but with mathematics >= 75."
+Reflection: The AI chose collections for each task (Comparator for sorting, TreeSet and
+Map for grouping skills). I checked the category boundaries and the "needs improvement"
+rule (programming below 50) against the question paper.
+
+PROMPT 3
+"Add validation (scores 0-100, no duplicate student IDs) and return proper HTTP status
+codes (201, 400, 404, 409) with JSON error messages."
+Reflection: I tested these cases in Postman (duplicate ID, score 150, unknown ID) and
+confirmed the status codes. I understood why a global exception handler keeps the
+controller clean.

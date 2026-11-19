@@ -1,0 +1,466 @@
+{
+  "info": {
+    "name": "Student Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8081"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Add student S101 (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"S101\",\n  \"studentName\": \"Aarav Sharma\",\n  \"email\": \"aarav@example.com\",\n  \"courseName\": \"B.Tech CSE\",\n  \"programmingScore\": 92,\n  \"mathematicsScore\": 88,\n  \"skills\": [\n    \"Java\",\n    \"Spring Boot\",\n    \"MySQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "02 Add student S102 (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"S102\",\n  \"studentName\": \"Diya Patel\",\n  \"email\": \"diya@example.com\",\n  \"courseName\": \"B.Tech CSE\",\n  \"programmingScore\": 45,\n  \"mathematicsScore\": 82,\n  \"skills\": [\n    \"Python\",\n    \"SQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "03 Add student S103 (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"S103\",\n  \"studentName\": \"Rohan Verma\",\n  \"email\": \"rohan@example.com\",\n  \"courseName\": \"B.Tech IT\",\n  \"programmingScore\": 68,\n  \"mathematicsScore\": 55,\n  \"skills\": [\n    \"Java\",\n    \"Spring Boot\",\n    \"MySQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "04 Add student S104 (201)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"S104\",\n  \"studentName\": \"Sneha Iyer\",\n  \"email\": \"sneha@example.com\",\n  \"courseName\": \"B.Tech IT\",\n  \"programmingScore\": 78,\n  \"mathematicsScore\": 74,\n  \"skills\": [\n    \"Python\",\n    \"SQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "05 Add duplicate S101 (409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"S101\",\n  \"studentName\": \"Aarav Sharma\",\n  \"email\": \"aarav@example.com\",\n  \"courseName\": \"B.Tech CSE\",\n  \"programmingScore\": 92,\n  \"mathematicsScore\": 88,\n  \"skills\": [\n    \"Java\",\n    \"Spring Boot\",\n    \"MySQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "06 Invalid score 150 (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"studentId\": \"S900\",\n  \"studentName\": \"Aarav Sharma\",\n  \"email\": \"aarav@example.com\",\n  \"courseName\": \"B.Tech CSE\",\n  \"programmingScore\": 150,\n  \"mathematicsScore\": 88,\n  \"skills\": [\n    \"Java\",\n    \"Spring Boot\",\n    \"MySQL\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "07 Get all students (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        }
+      }
+    },
+    {
+      "name": "08 Get student by ID S101 (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/S101",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "S101"
+          ]
+        }
+      }
+    },
+    {
+      "name": "09 Get student S999 (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/S999",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "S999"
+          ]
+        }
+      }
+    },
+    {
+      "name": "10 Search by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?id=S102",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "S102"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "11 Search by email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?email=sneha@example.com",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "sneha@example.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "12 Search by course",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/search?course=B.Tech IT",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "course",
+              "value": "B.Tech IT"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "13 Update scores and skills S103 (200)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/S103",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "S103"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"programmingScore\": 72,\n  \"mathematicsScore\": 60,\n  \"skills\": [\n    \"Java\",\n    \"Docker\"\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "14 Merit list (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/merit-list",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "merit-list"
+          ]
+        }
+      }
+    },
+    {
+      "name": "15 Same skill sets (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/same-skills",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "same-skills"
+          ]
+        }
+      }
+    },
+    {
+      "name": "16 Students per shared skill (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/same-skills/by-skill",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "same-skills",
+            "by-skill"
+          ]
+        }
+      }
+    },
+    {
+      "name": "17 Programming < 50 and Maths >= 75 (200)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/needs-programming-improvement",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "needs-programming-improvement"
+          ]
+        }
+      }
+    },
+    {
+      "name": "18 Delete student S104 (200)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/S104",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "S104"
+          ]
+        }
+      }
+    },
+    {
+      "name": "19 Delete S104 again (404)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/students/S104",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "S104"
+          ]
+        }
+      }
+    }
+  ]
+}

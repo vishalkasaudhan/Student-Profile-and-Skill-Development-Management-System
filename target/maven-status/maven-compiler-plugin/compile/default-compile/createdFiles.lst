@@ -1,0 +1,12 @@
+com\exam\student\StudentManagementApplication.class
+com\exam\student\service\StudentService.class
+com\exam\student\exception\StudentValidationException.class
+com\exam\student\dto\SkillGroup.class
+com\exam\student\model\Student.class
+com\exam\student\dto\MeritListEntry.class
+com\exam\student\repository\StudentRepository.class
+com\exam\student\exception\GlobalExceptionHandler.class
+com\exam\student\exception\StudentNotFoundException.class
+com\exam\student\controller\StudentController.class
+com\exam\student\dto\StudentUpdateRequest.class
+com\exam\student\exception\DuplicateStudentException.class

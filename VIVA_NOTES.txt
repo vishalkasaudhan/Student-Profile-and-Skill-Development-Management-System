@@ -1,0 +1,38 @@
+VIVA NOTES - where each requirement is implemented
+(src\main\java\com\exam\student\...)
+
+Q1  model\Student.java
+    Private fields, two constructors, getters/setters (encapsulation), toString,
+    equals/hashCode (based on studentId), and business methods:
+    getAverageScore(), getPerformanceCategory(), getStrongerSubject().
+    Skills = List<String>, stored with @ElementCollection in table student_skills.
+
+Q2  Database: tables students (PK student_id -> no duplicate IDs) and student_skills
+    (FK student_id). CHECK constraints in database_setup.sql keep scores 0-100.
+    service\StudentService.java holds all business logic:
+    1 Average         Student.getAverageScore()  = (programming + maths) / 2
+    2 Category        Student.getPerformanceCategory()  >=85 Excellent, >=70 Good,
+                      >=50 Satisfactory, else Needs Improvement
+    3 Stronger        Student.getStrongerSubject()
+    4 Search          searchStudents()  - stream().filter() on id / email / course
+    5 Merit list      getMeritList()  - ArrayList.sort() with Comparator.comparingDouble(...).reversed()
+    6 Same skills     getStudentsWithSameSkillSet() / getStudentsBySharedSkill()
+    7 Needs improve.  getNeedsProgrammingImprovementButStrongInMaths()  programming < 50 and maths >= 75
+    8 Validation      validateAndClean() + validateScore(); duplicate -> DuplicateStudentException (409)
+
+COLLECTIONS USED (be ready to explain why)
+- List / ArrayList : skills of a student, merit list, result lists (ordered, allows index access, sortable).
+- Comparator       : sort students by average descending, ties by name.
+- Stream API       : filter() and collect() for search and for the "programming vs maths" rule.
+- TreeSet<String>  : a student's skills in lower case -> removes duplicates AND sorts them, so
+                     {Java, MySQL} equals {mysql, java} when comparing skill sets.
+- Map / LinkedHashMap : key = sorted skill set, value = list of students -> groups students with
+                     identical skills (computeIfAbsent).
+- TreeMap          : skill -> students having it, keys alphabetically sorted.
+
+Q3  controller\StudentController.java  (REST, ResponseEntity + HTTP status codes)
+    POST 201 | GET 200 | PUT 200 | DELETE 200 | not found 404 | duplicate 409 | bad data 400
+    exception\GlobalExceptionHandler.java turns exceptions into JSON errors.
+
+LAYERS: Controller -> Service -> Repository (Spring Data JPA) -> MySQL.
+Tables are created by Hibernate (spring.jpa.hibernate.ddl-auto=update).

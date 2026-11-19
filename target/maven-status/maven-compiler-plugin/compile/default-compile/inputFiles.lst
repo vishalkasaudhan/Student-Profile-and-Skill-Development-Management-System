@@ -1,0 +1,12 @@
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\exception\StudentValidationException.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\dto\SkillGroup.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\controller\StudentController.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\service\StudentService.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\dto\MeritListEntry.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\StudentManagementApplication.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\repository\StudentRepository.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\exception\GlobalExceptionHandler.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\model\Student.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\exception\StudentNotFoundException.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\exception\DuplicateStudentException.java
+C:\Users\VISHAL\Documents\student-management\src\main\java\com\exam\student\dto\StudentUpdateRequest.java
